@@ -1,0 +1,24 @@
+[package]
+name = "shellsense"
+version = "0.1.0"
+edition = "2021"
+description = "Offline terminal AI autocomplete - learns your command patterns"
+license = "MIT"
+
+[dependencies]
+rusqlite = { version = "0.31", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+clap = { version = "4", features = ["derive"] }
+dirs = "5"
+chrono = "0.4"
+strsim = "0.11"
+ratatui = "0.30.0"
+crossterm = "0.29.0"
+ctrlc = { version = "3", features = ["termination"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
